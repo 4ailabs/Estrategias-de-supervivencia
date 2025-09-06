@@ -12,6 +12,39 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        
+        /* Mejoras para móviles */
+        @media (max-width: 640px) {
+            .line-clamp-2 {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            
+            .line-clamp-3 {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
+        
+        /* Mejoras de scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Mejoras de touch para móviles */
+        @media (hover: none) and (pointer: coarse) {
+            .card:hover {
+                transform: none;
+            }
+            
+            .card:active {
+                transform: scale(0.98);
+            }
+        }
     </style>
 </head>
 <body>
