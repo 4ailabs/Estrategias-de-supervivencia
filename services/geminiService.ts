@@ -8,7 +8,7 @@ if (process.env.API_KEY) {
     ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 }
 
-export const getGeminiAdvice = async (strategy: Strategy): Promise<string> => {
+export const getGeminiAdvice = async (strategy: Strategy, childInfo?: { name: string; age: string; symptoms: string }): Promise<string> => {
     // Si no hay API_KEY configurada, devolver consejos genéricos mejorados
     if (!ai) {
         const getGenericAdvice = (category: string, title: string) => {
@@ -83,7 +83,7 @@ export const getGeminiAdvice = async (strategy: Strategy): Promise<string> => {
         return getGenericAdvice(strategy.category, strategy.title);
     }
 
-    const systemPrompt = `Eres una especialista en desarrollo infantil y biomagnetismo del Instituto CentroBioenergética. Tu misión es brindar orientación práctica y amorosa para padres que buscan apoyar a sus hijos. 
+    const systemPrompt = `Eres una especialista en desarrollo infantil y biomagnetismo. Tu misión es brindar orientación práctica y amorosa para padres que buscan apoyar a sus hijos. 
 
 INSTRUCCIONES ESPECÍFICAS:
 - Proporciona 4-6 estrategias prácticas y específicas
@@ -97,12 +97,19 @@ INSTRUCCIONES ESPECÍFICAS:
 - Incluye estrategias para padres y cuidadores
 - Usa un tono de apoyo y comprensión`;
 
+    const childContext = childInfo && (childInfo.name || childInfo.age || childInfo.symptoms) 
+        ? `\nINFORMACIÓN DEL NIÑO:
+- Nombre: ${childInfo.name || 'No especificado'}
+- Edad: ${childInfo.age || 'No especificada'}
+- Síntomas/Sensaciones: ${childInfo.symptoms || 'No especificados'}\n`
+        : '';
+
     const userQuery = `ESTRATEGIA DE SUPERVIVENCIA: "${strategy.title}"
 
 CONTEXTO:
 - Vivencias/Conflictos originarios: ${strategy.vivencias.join(', ')}
 - Manifestación observable: ${strategy.manifestacion.replace(/\*\*/g, '')}
-- Categoría: ${strategy.category}
+- Categoría: ${strategy.category}${childContext}
 
 SOLICITUD:
 Necesito estrategias específicas y adaptables para mejorar las condiciones de este niño. Por favor, proporciona:

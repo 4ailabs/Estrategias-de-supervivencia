@@ -13,6 +13,12 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [advice, setAdvice] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
+    const [childInfo, setChildInfo] = useState({
+        name: '',
+        age: '',
+        symptoms: ''
+    });
+    const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {
         if (strategy) {
@@ -47,14 +53,14 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
         setAdvice(null);
         setError(null);
         try {
-            const result = await getGeminiAdvice(strategy);
+            const result = await getGeminiAdvice(strategy, childInfo);
             setAdvice(result);
         } catch (err: any) {
             setError(err.message || 'An unknown error occurred.');
         } finally {
             setIsLoading(false);
         }
-    }, [strategy]);
+    }, [strategy, childInfo]);
 
     const formatAdvice = (text: string) => {
         return text
@@ -110,6 +116,56 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
 
                     <div className="border-t-2 border-green-200/50 pt-4 sm:pt-6">
                          <h3 className="text-lg sm:text-xl font-semibold text-green-800 mb-3 sm:mb-4">Guía de Apoyo para Padres</h3>
+                         
+                         {!showForm && (
+                             <div className="mb-4">
+                                 <button
+                                     onClick={() => setShowForm(true)}
+                                     className="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium py-2.5 sm:py-3 px-4 rounded-lg shadow-md hover:shadow-lg hover:from-blue-500 hover:to-blue-400 transition-all duration-300 transform hover:-translate-y-0.5 text-sm sm:text-base"
+                                 >
+                                     Personalizar con información de tu hijo
+                                 </button>
+                             </div>
+                         )}
+
+                         {showForm && (
+                             <div className="mb-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                                 <h4 className="text-sm sm:text-base font-semibold text-blue-800 mb-3">Información de tu hijo (opcional)</h4>
+                                 <div className="space-y-3">
+                                     <div>
+                                         <label className="block text-xs sm:text-sm font-medium text-blue-700 mb-1">Nombre del niño</label>
+                                         <input
+                                             type="text"
+                                             value={childInfo.name}
+                                             onChange={(e) => setChildInfo(prev => ({ ...prev, name: e.target.value }))}
+                                             placeholder="Ej: María, Juan, etc."
+                                             className="w-full px-3 py-2 border border-blue-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                         />
+                                     </div>
+                                     <div>
+                                         <label className="block text-xs sm:text-sm font-medium text-blue-700 mb-1">Edad</label>
+                                         <input
+                                             type="text"
+                                             value={childInfo.age}
+                                             onChange={(e) => setChildInfo(prev => ({ ...prev, age: e.target.value }))}
+                                             placeholder="Ej: 5 años, 8 meses, etc."
+                                             className="w-full px-3 py-2 border border-blue-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                         />
+                                     </div>
+                                     <div>
+                                         <label className="block text-xs sm:text-sm font-medium text-blue-700 mb-1">Síntomas o sensaciones observadas</label>
+                                         <textarea
+                                             value={childInfo.symptoms}
+                                             onChange={(e) => setChildInfo(prev => ({ ...prev, symptoms: e.target.value }))}
+                                             placeholder="Describe qué has observado en tu hijo..."
+                                             rows={3}
+                                             className="w-full px-3 py-2 border border-blue-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                                         />
+                                     </div>
+                                 </div>
+                             </div>
+                         )}
+
                          <div>
                              <button
                                  onClick={handleGenerateAdvice}
