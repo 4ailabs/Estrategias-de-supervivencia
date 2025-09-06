@@ -1,4 +1,6 @@
 
+import React from 'react';
+
 export type StrategyCategory = 'supervivencia' | 'corteza' | 'territorial' | 'otras';
 
 export interface Strategy {
@@ -7,7 +9,7 @@ export interface Strategy {
   title: string;
   vivencias: string[];
   manifestacion: string;
-  icon: string;
+  icon: React.ReactElement;
 }
 
 export interface Filter {

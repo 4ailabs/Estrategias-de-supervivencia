@@ -1,20 +1,62 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Biomagnetismo Kids
 
-# Run and deploy your AI Studio app
+## Guía Interactiva de Estrategias de Supervivencia Infantil
 
-This contains everything you need to run your app locally.
+Una herramienta especializada para comprender las respuestas de comportamiento en la infancia, basada en la metodología del Instituto CentroBioenergética.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1k2J2RJzpNPb2--8v_WRUlMpQ8LT04o4w
+### Características
 
-## Run Locally
+- **20 estrategias de supervivencia** categorizadas por tipo
+- **Iconos de Lucide React** para mejor visualización
+- **Filtros interactivos** por categoría
+- **Modal detallado** con vivencias y manifestaciones
+- **Consejos personalizados** para cada estrategia
+- **Diseño responsive** y moderno
 
-**Prerequisites:**  Node.js
+### Categorías de Estrategias
 
+1. **Supervivencia y Protección** - Respuestas básicas de supervivencia
+2. **Sustancia Blanca y Corteza** - Procesamiento cognitivo y memoria
+3. **Corteza Territorial** - Gestión del espacio y territorio
+4. **Otras Estrategias** - Patrones adicionales de comportamiento
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Tecnologías
+
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React
+- Google Gemini AI (opcional)
+
+### Desarrollo
+
+```bash
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
+npm run dev
+
+# Construir para producción
+npm run build
+
+# Vista previa de producción
+npm run preview
+```
+
+### Despliegue en Vercel
+
+1. Conecta tu repositorio a Vercel
+2. Vercel detectará automáticamente que es un proyecto Vite
+3. El despliegue se realizará automáticamente
+
+### Instituto CentroBioenergética
+
+**Dr. Miguel Ojeda Rios - Director**
+
+Especialistas en biomagnetismo y terapias bioenergéticas para el bienestar integral.
+
+---
+
+© 2024 Biomagnetismo Kids - Instituto CentroBioenergética. Todos los derechos reservados.

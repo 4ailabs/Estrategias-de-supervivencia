@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Strategy } from '../types';
 import { getGeminiAdvice } from '../services/geminiService';
-import CloseIcon from './CloseIcon';
+import { X, Sparkles } from 'lucide-react';
 import Spinner from './Spinner';
-import SparklesIcon from './SparklesIcon';
 
 interface StrategyModalProps {
     strategy: Strategy | null;
@@ -85,7 +84,7 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
                     className="absolute top-4 right-4 text-slate-500 hover:text-red-600 transition-colors rounded-full hover:bg-slate-200 p-1"
                     aria-label="Cerrar"
                 >
-                    <CloseIcon />
+                    <X className="w-8 h-8" />
                 </button>
 
                 <h2 className="text-3xl font-bold text-gradient mb-6 pr-8">{strategy.title}</h2>
@@ -111,7 +110,7 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
                                  disabled={isLoading}
                                  className="group w-full bg-gradient-to-r from-green-700 to-green-600 text-white font-bold py-3 px-4 rounded-lg shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-500 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 disabled:from-green-800 disabled:to-green-700 disabled:opacity-70 disabled:cursor-not-allowed"
                              >
-                                 <SparklesIcon />
+                                 <Sparkles className="h-5 w-5 transition-transform duration-500 group-hover:rotate-12" />
                                  Generar Consejos Prácticos
                              </button>
                          </div>
