@@ -103,7 +103,7 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
                     </div>
 
                     <div className="border-t-2 border-green-200/50 pt-4 sm:pt-6">
-                         <h3 className="text-lg sm:text-xl font-semibold text-green-800 mb-3 sm:mb-4">Apoyo con IA para Cuidadores</h3>
+                         <h3 className="text-lg sm:text-xl font-semibold text-green-800 mb-3 sm:mb-4">Estrategias Específicas de Mejora</h3>
                          <div>
                              <button
                                  onClick={handleGenerateAdvice}
@@ -111,7 +111,7 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
                                  className="group w-full bg-gradient-to-r from-green-700 to-green-600 text-white font-bold py-2.5 sm:py-3 px-4 rounded-lg shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-500 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 disabled:from-green-800 disabled:to-green-700 disabled:opacity-70 disabled:cursor-not-allowed text-sm sm:text-base"
                              >
                                  <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-500 group-hover:rotate-12" />
-                                 Generar Consejos Prácticos
+                                 Generar Estrategias de Mejora
                              </button>
                          </div>
                          <div className="mt-3 sm:mt-4 min-h-[4rem] sm:min-h-[5rem]">
