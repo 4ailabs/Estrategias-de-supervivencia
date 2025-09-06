@@ -13,69 +13,69 @@ export const getGeminiAdvice = async (strategy: Strategy): Promise<string> => {
     if (!ai) {
         const getGenericAdvice = (category: string, title: string) => {
             const baseAdvice = {
-                supervivencia: `**Estrategias para ${title} (Supervivencia y Protección):**
+                supervivencia: `**Guía de Apoyo para ${title} (Supervivencia y Protección):**
 
-* **Crear seguridad emocional**: Establece un ambiente predecible y seguro donde el niño se sienta protegido
-* **Validar sus emociones**: Reconoce sus sentimientos sin minimizarlos, diciendo "Entiendo que te sientes..."
-* **Técnicas de respiración**: Enséñale respiraciones profundas para calmar el sistema nervioso
-* **Rutinas consistentes**: Mantén horarios regulares para comidas, sueño y actividades
-* **Contacto físico seguro**: Abrazos, caricias suaves cuando el niño lo permita
-* **Espacio personal**: Asegúrate de que tenga un lugar donde pueda sentirse seguro
+* **Crear un ambiente seguro**: Establece un hogar predecible y tranquilo donde tu hijo se sienta protegido
+* **Escuchar con el corazón**: Reconoce sus sentimientos diciendo "Entiendo que te sientes..." sin juzgar
+* **Respirar juntos**: Enséñale a respirar profundamente para calmarse cuando se sienta abrumado
+* **Rutinas que dan paz**: Mantén horarios regulares para comidas, sueño y actividades
+* **Abrazos sanadores**: Ofrece contacto físico cariñoso cuando tu hijo lo necesite
+* **Su espacio especial**: Asegúrate de que tenga un rincón donde pueda sentirse seguro
 
-**Técnicas de Biomagnetismo:**
-* **Pares magnéticos**: Aplicar imanes en puntos específicos para equilibrar el campo energético
-* **Terapia de polaridad**: Trabajar con los polos norte y sur para armonizar la energía
+**Técnicas de Apoyo Energético:**
+* **Equilibrio con imanes**: Aplicar imanes en puntos específicos para armonizar su energía
+* **Terapia de polaridad**: Trabajar con campos magnéticos para restaurar el equilibrio
 * **Puntos de acupresión**: Estimular puntos específicos para liberar tensiones emocionales
 
-*Nota: Para estrategias específicas de biomagnetismo, configura la API_KEY de Gemini.*`,
+*Nota: Para una guía personalizada, configura la API_KEY de Gemini.*`,
 
-                corteza: `**Estrategias para ${title} (Sustancia Blanca y Corteza):**
+                corteza: `**Guía de Apoyo para ${title} (Desarrollo Cognitivo):**
 
-* **Ejercicios de memoria**: Juegos de memoria, rompecabezas, actividades que estimulen la cognición
-* **Técnicas de atención**: Ejercicios de concentración progresiva, meditación guiada para niños
-* **Alimentación neuroprotectora**: Omega-3, antioxidantes, alimentos que nutran el cerebro
+* **Juegos que fortalecen la memoria**: Rompecabezas, juegos de memoria, actividades que estimulen su mente
+* **Ejercicios de concentración**: Meditación guiada para niños, ejercicios de atención plena
+* **Alimentación para el cerebro**: Omega-3, antioxidantes, alimentos que nutran su desarrollo
 * **Sueño reparador**: Rutinas de sueño consistentes, ambiente oscuro y silencioso
-* **Actividades multisensoriales**: Música, arte, movimiento que estimulen diferentes áreas cerebrales
-* **Reducción de estrés**: Técnicas de relajación, yoga para niños, mindfulness
+* **Actividades multisensoriales**: Música, arte, movimiento que estimulen su creatividad
+* **Técnicas de relajación**: Yoga para niños, mindfulness, respiración consciente
 
-**Técnicas de Biomagnetismo:**
+**Técnicas de Apoyo Energético:**
 * **Equilibrio energético**: Aplicar imanes en puntos craneales para mejorar la función cerebral
-* **Terapia de polaridad**: Trabajar con campos magnéticos para estimular la neuroplasticidad
+* **Terapia de polaridad**: Trabajar con campos magnéticos para estimular el desarrollo
 * **Puntos de acupresión**: Estimular meridianos relacionados con la función cognitiva
 
-*Nota: Para técnicas específicas de biomagnetismo, configura la API_KEY de Gemini.*`,
+*Nota: Para una guía personalizada, configura la API_KEY de Gemini.*`,
 
-                territorial: `**Estrategias para ${title} (Corteza Territorial):**
+                territorial: `**Guía de Apoyo para ${title} (Espacio y Territorio):**
 
-* **Respetar su espacio**: No invadir su territorio personal sin permiso
-* **Comunicación clara**: Explica cambios y decisiones que afecten su entorno
-* **Participación en decisiones**: Inclúyelo en decisiones familiares apropiadas para su edad
-* **Actividades de control**: Permítele tomar decisiones pequeñas para recuperar sensación de control
+* **Respetar su espacio personal**: No invadir su territorio sin permiso, pide antes de entrar
+* **Comunicación clara y amorosa**: Explica cambios y decisiones que afecten su entorno
+* **Incluirlo en decisiones**: Permítele participar en decisiones familiares apropiadas para su edad
+* **Darle control**: Permítele tomar decisiones pequeñas para recuperar sensación de control
 * **Técnicas de relajación**: Ejercicios de respiración, visualización, relajación muscular
 * **Apoyo profesional**: Considera terapia familiar para trabajar dinámicas territoriales
 
-**Técnicas de Biomagnetismo:**
+**Técnicas de Apoyo Energético:**
 * **Equilibrio territorial**: Aplicar imanes en puntos relacionados con el sistema límbico
 * **Terapia de polaridad**: Trabajar con campos magnéticos para armonizar la energía territorial
 * **Puntos de acupresión**: Estimular meridianos relacionados con la sensación de seguridad
 
-*Nota: Para técnicas específicas de biomagnetismo, configura la API_KEY de Gemini.*`,
+*Nota: Para una guía personalizada, configura la API_KEY de Gemini.*`,
 
-                otras: `**Estrategias para ${title} (Otras Estrategias):**
+                otras: `**Guía de Apoyo para ${title} (Estrategias Adicionales):**
 
-* **Observación detallada**: Lleva un diario de comportamientos y patrones
-* **Ambiente estructurado**: Proporciona límites claros y predecibles
+* **Observar con amor**: Lleva un diario de comportamientos y patrones para entender mejor a tu hijo
+* **Ambiente estructurado**: Proporciona límites claros y predecibles que den seguridad
 * **Técnicas de regulación**: Ejercicios de respiración, movimiento, música relajante
 * **Comunicación no verbal**: Usa gestos, contacto visual, tono de voz calmado
 * **Actividades de liberación**: Arte, música, movimiento para expresar emociones
 * **Apoyo especializado**: Consulta con profesionales en biomagnetismo y psicología infantil
 
-**Técnicas de Biomagnetismo:**
+**Técnicas de Apoyo Energético:**
 * **Evaluación energética**: Identificar desequilibrios en el campo energético del niño
 * **Terapia de polaridad**: Trabajar con campos magnéticos para armonizar la energía general
 * **Puntos de acupresión**: Estimular meridianos específicos según la manifestación
 
-*Nota: Para técnicas específicas de biomagnetismo, configura la API_KEY de Gemini.*`
+*Nota: Para una guía personalizada, configura la API_KEY de Gemini.*`
             };
             return baseAdvice[category as keyof typeof baseAdvice] || baseAdvice.otras;
         };
@@ -83,17 +83,19 @@ export const getGeminiAdvice = async (strategy: Strategy): Promise<string> => {
         return getGenericAdvice(strategy.category, strategy.title);
     }
 
-    const systemPrompt = `Eres un especialista en biomagnetismo y psicología infantil con experiencia en el Instituto CentroBioenergética. Tu misión es proporcionar estrategias específicas y adaptables para mejorar las condiciones del niño, considerando tanto el aspecto emocional como bioenergético. 
+    const systemPrompt = `Eres una especialista en desarrollo infantil y biomagnetismo del Instituto CentroBioenergética. Tu misión es brindar orientación práctica y amorosa para padres que buscan apoyar a sus hijos. 
 
 INSTRUCCIONES ESPECÍFICAS:
 - Proporciona 4-6 estrategias prácticas y específicas
 - Cada estrategia debe ser adaptable a diferentes circunstancias familiares
 - Incluye técnicas de biomagnetismo cuando sea apropiado
 - Considera el contexto emocional y energético del niño
-- Usa lenguaje claro y compasivo, evitando jerga técnica
+- Usa lenguaje cálido, compasivo y fácil de entender
+- Evita términos técnicos complejos
 - Estructura cada punto con asteriscos (*) para listas
-- Enfócate en soluciones que fortalezcan el sistema nervioso del niño
-- Incluye estrategias para padres y cuidadores`;
+- Enfócate en soluciones que fortalezcan el bienestar del niño
+- Incluye estrategias para padres y cuidadores
+- Usa un tono de apoyo y comprensión`;
 
     const userQuery = `ESTRATEGIA DE SUPERVIVENCIA: "${strategy.title}"
 
@@ -131,6 +133,6 @@ Cada estrategia debe ser práctica, específica y adaptable a diferentes circuns
         }
     } catch (error) {
         console.error("Error calling Gemini API:", error);
-        throw new Error("Lo sentimos, no se pudieron generar los consejos en este momento. Por favor, inténtalo de nuevo más tarde.");
+        throw new Error("Lo sentimos, no se pudo generar la guía de apoyo en este momento. Por favor, inténtalo de nuevo más tarde.");
     }
 };
