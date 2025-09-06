@@ -16,11 +16,11 @@ export const getGeminiAdvice = async (strategy: Strategy, childInfo?: { name: st
                 supervivencia: `**Guía de Apoyo para ${title} (Supervivencia y Protección):**
 
 * **Crear un ambiente seguro**: Establece un hogar predecible y tranquilo donde tu hijo se sienta protegido
-* **Escuchar con el corazón**: Reconoce sus sentimientos diciendo "Entiendo que te sientes..." sin juzgar
-* **Respirar juntos**: Enséñale a respirar profundamente para calmarse cuando se sienta abrumado
-* **Rutinas que dan paz**: Mantén horarios regulares para comidas, sueño y actividades
-* **Abrazos sanadores**: Ofrece contacto físico cariñoso cuando tu hijo lo necesite
-* **Su espacio especial**: Asegúrate de que tenga un rincón donde pueda sentirse seguro
+* **Validar sus emociones**: Reconoce sus sentimientos diciendo "Entiendo que te sientes..." sin juzgar
+* **Técnicas de respiración**: Enséñale a respirar profundamente para calmarse cuando se sienta abrumado
+* **Rutinas consistentes**: Mantén horarios regulares para comidas, sueño y actividades
+* **Contacto físico seguro**: Ofrece abrazos y caricias cuando tu hijo lo permita
+* **Espacio personal**: Asegúrate de que tenga un lugar donde pueda sentirse seguro
 
 **Técnicas de Apoyo Energético:**
 * **Equilibrio con imanes**: Aplicar imanes en puntos específicos para armonizar su energía
@@ -48,7 +48,7 @@ export const getGeminiAdvice = async (strategy: Strategy, childInfo?: { name: st
                 territorial: `**Guía de Apoyo para ${title} (Espacio y Territorio):**
 
 * **Respetar su espacio personal**: No invadir su territorio sin permiso, pide antes de entrar
-* **Comunicación clara y amorosa**: Explica cambios y decisiones que afecten su entorno
+* **Comunicación clara**: Explica cambios y decisiones que afecten su entorno
 * **Incluirlo en decisiones**: Permítele participar en decisiones familiares apropiadas para su edad
 * **Darle control**: Permítele tomar decisiones pequeñas para recuperar sensación de control
 * **Técnicas de relajación**: Ejercicios de respiración, visualización, relajación muscular
@@ -63,7 +63,7 @@ export const getGeminiAdvice = async (strategy: Strategy, childInfo?: { name: st
 
                 otras: `**Guía de Apoyo para ${title} (Estrategias Adicionales):**
 
-* **Observar con amor**: Lleva un diario de comportamientos y patrones para entender mejor a tu hijo
+* **Observación detallada**: Lleva un diario de comportamientos y patrones para entender mejor a tu hijo
 * **Ambiente estructurado**: Proporciona límites claros y predecibles que den seguridad
 * **Técnicas de regulación**: Ejercicios de respiración, movimiento, música relajante
 * **Comunicación no verbal**: Usa gestos, contacto visual, tono de voz calmado
@@ -83,19 +83,20 @@ export const getGeminiAdvice = async (strategy: Strategy, childInfo?: { name: st
         return getGenericAdvice(strategy.category, strategy.title);
     }
 
-    const systemPrompt = `Eres una especialista en desarrollo infantil y biomagnetismo. Tu misión es brindar orientación práctica y amorosa para padres que buscan apoyar a sus hijos. 
+    const systemPrompt = `Eres una especialista en desarrollo infantil y biomagnetismo. Tu misión es brindar orientación práctica y profesional para padres que buscan apoyar a sus hijos. 
 
 INSTRUCCIONES ESPECÍFICAS:
 - Proporciona 4-6 estrategias prácticas y específicas
 - Cada estrategia debe ser adaptable a diferentes circunstancias familiares
 - Incluye técnicas de biomagnetismo cuando sea apropiado
 - Considera el contexto emocional y energético del niño
-- Usa lenguaje cálido, compasivo y fácil de entender
-- Evita términos técnicos complejos
+- Usa lenguaje claro, directo y profesional
+- Evita términos técnicos complejos y lenguaje excesivamente emocional
 - Estructura cada punto con asteriscos (*) para listas
 - Enfócate en soluciones que fortalezcan el bienestar del niño
 - Incluye estrategias para padres y cuidadores
-- Usa un tono de apoyo y comprensión`;
+- Mantén un tono profesional pero accesible
+- Evita frases melodramáticas o excesivamente sentimentales`;
 
     const childContext = childInfo && (childInfo.name || childInfo.age || childInfo.symptoms) 
         ? `\nINFORMACIÓN DEL NIÑO:
