@@ -45,6 +45,52 @@
                 transform: scale(0.98);
             }
         }
+        
+        /* Mejoras para respuestas de IA en móviles */
+        @media (max-width: 640px) {
+            .advice-container {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            
+            .advice-container strong {
+                font-size: 15px;
+                line-height: 1.5;
+            }
+            
+            .advice-container li {
+                margin-bottom: 8px;
+                padding-left: 8px;
+            }
+            
+            .advice-container p {
+                margin-bottom: 12px;
+            }
+        }
+        
+        /* Mejoras generales para respuestas de IA */
+        .advice-container {
+            scroll-behavior: smooth;
+        }
+        
+        .advice-container ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .advice-container li {
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .advice-container li::before {
+            content: "•";
+            color: #10b981;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
     </style>
 </head>
 <body>

@@ -58,11 +58,17 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
 
     const formatAdvice = (text: string) => {
         return text
-            .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-slate-800">$1</strong>')
+            .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-green-800 text-sm sm:text-base">$1</strong>')
             .split('\n')
             .filter(line => line.trim())
-            .map(line => line.trim().replace(/^\* |^- /, ''))
-            .map(line => `<li>${line}</li>`)
+            .map(line => {
+                const trimmedLine = line.trim();
+                if (trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ')) {
+                    const content = trimmedLine.replace(/^[\*\-] /, '');
+                    return `<li class="mb-2 text-sm sm:text-base text-slate-700 leading-relaxed pl-2">${content}</li>`;
+                }
+                return `<p class="mb-3 text-sm sm:text-base text-slate-700 leading-relaxed">${trimmedLine}</p>`;
+            })
             .join('');
     };
 
@@ -118,8 +124,14 @@ const StrategyModal: React.FC<StrategyModalProps> = ({ strategy, onClose }) => {
                             {isLoading && <Spinner />}
                             {error && <div className="text-red-600 bg-red-100 p-3 sm:p-4 rounded-lg border border-red-200 text-sm sm:text-base">{error}</div>}
                             {advice && (
-                                <div className="text-slate-700 bg-green-50/50 p-3 sm:p-4 rounded-lg border border-green-200/60">
-                                    <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: formatAdvice(advice) }} />
+                                <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 sm:p-5 rounded-xl border border-green-200/60 shadow-sm">
+                                    <div className="space-y-3">
+                                        <div className="flex items-center gap-2 mb-4">
+                                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                            <h4 className="font-semibold text-green-800 text-sm sm:text-base">Estrategias Específicas de Mejora</h4>
+                                        </div>
+                                        <div className="space-y-2 advice-container" dangerouslySetInnerHTML={{ __html: formatAdvice(advice) }} />
+                                    </div>
                                 </div>
                             )}
                          </div>

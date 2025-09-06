@@ -22,6 +22,11 @@ export const getGeminiAdvice = async (strategy: Strategy): Promise<string> => {
 * **Contacto físico seguro**: Abrazos, caricias suaves cuando el niño lo permita
 * **Espacio personal**: Asegúrate de que tenga un lugar donde pueda sentirse seguro
 
+**Técnicas de Biomagnetismo:**
+* **Pares magnéticos**: Aplicar imanes en puntos específicos para equilibrar el campo energético
+* **Terapia de polaridad**: Trabajar con los polos norte y sur para armonizar la energía
+* **Puntos de acupresión**: Estimular puntos específicos para liberar tensiones emocionales
+
 *Nota: Para estrategias específicas de biomagnetismo, configura la API_KEY de Gemini.*`,
 
                 corteza: `**Estrategias para ${title} (Sustancia Blanca y Corteza):**
@@ -32,6 +37,11 @@ export const getGeminiAdvice = async (strategy: Strategy): Promise<string> => {
 * **Sueño reparador**: Rutinas de sueño consistentes, ambiente oscuro y silencioso
 * **Actividades multisensoriales**: Música, arte, movimiento que estimulen diferentes áreas cerebrales
 * **Reducción de estrés**: Técnicas de relajación, yoga para niños, mindfulness
+
+**Técnicas de Biomagnetismo:**
+* **Equilibrio energético**: Aplicar imanes en puntos craneales para mejorar la función cerebral
+* **Terapia de polaridad**: Trabajar con campos magnéticos para estimular la neuroplasticidad
+* **Puntos de acupresión**: Estimular meridianos relacionados con la función cognitiva
 
 *Nota: Para técnicas específicas de biomagnetismo, configura la API_KEY de Gemini.*`,
 
@@ -44,6 +54,11 @@ export const getGeminiAdvice = async (strategy: Strategy): Promise<string> => {
 * **Técnicas de relajación**: Ejercicios de respiración, visualización, relajación muscular
 * **Apoyo profesional**: Considera terapia familiar para trabajar dinámicas territoriales
 
+**Técnicas de Biomagnetismo:**
+* **Equilibrio territorial**: Aplicar imanes en puntos relacionados con el sistema límbico
+* **Terapia de polaridad**: Trabajar con campos magnéticos para armonizar la energía territorial
+* **Puntos de acupresión**: Estimular meridianos relacionados con la sensación de seguridad
+
 *Nota: Para técnicas específicas de biomagnetismo, configura la API_KEY de Gemini.*`,
 
                 otras: `**Estrategias para ${title} (Otras Estrategias):**
@@ -54,6 +69,11 @@ export const getGeminiAdvice = async (strategy: Strategy): Promise<string> => {
 * **Comunicación no verbal**: Usa gestos, contacto visual, tono de voz calmado
 * **Actividades de liberación**: Arte, música, movimiento para expresar emociones
 * **Apoyo especializado**: Consulta con profesionales en biomagnetismo y psicología infantil
+
+**Técnicas de Biomagnetismo:**
+* **Evaluación energética**: Identificar desequilibrios en el campo energético del niño
+* **Terapia de polaridad**: Trabajar con campos magnéticos para armonizar la energía general
+* **Puntos de acupresión**: Estimular meridianos específicos según la manifestación
 
 *Nota: Para técnicas específicas de biomagnetismo, configura la API_KEY de Gemini.*`
             };
